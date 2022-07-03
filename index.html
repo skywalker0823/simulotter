@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css"/>  
+    <title>Simulotter</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Simulotter</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">排行榜</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            友站連結
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="https://motivetag.xyz/" target="_blank">MotiveTag - 社群交友</a></li>
+            <li><a class="dropdown-item" href="https://taipeidaytrip.fun/" target="_blank">Day Trip Taipei - 旅行預約</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<section class="main_frame">
+
+
+<h1 class="display-5">Time Mode</h1>
+
+<div>遊戲類別</div>
+<select class="form-select" id="play_type" aria-label="Default select example">
+  <option value="power" selected>威力彩 - 每週一、四開獎</option>
+  <option value="other1">其他</option>
+  <option value="other2">其他2</option>
+  <option value="other3">其他3</option>
+</select>
+
+<div>初期持有金額(至少100)</div>
+<div class="input-group mb-3">
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+  <input type="text" id="start_up" class="form-control" aria-label="Text input with dropdown button" placeholder="持有資金" required>
+  <span class="input-group-text">元整</span>
+  <div class="invalid-feedback">
+      Please provide a valid zip.
+    </div>
+</div>
+<div>每次會自動購入此號碼1~38(之後開放提昇至多組)</div>
+<div class="input-group">
+  <button class="btn btn-primary" type="button" id="button-addon1" onclick="generator(this.id)">隨機選號</button>
+  <input type="number" id="po_1"  class="form-control" placeholder="第一碼">
+  <input type="number" id="po_2" class="form-control" placeholder="第二碼">
+  <input type="number" id="po_3" class="form-control" placeholder="第三碼">
+  <input type="number" id="po_4" class="form-control" placeholder="第四碼">
+  <input type="number" id="po_5" class="form-control" placeholder="第五碼">
+  <input type="number" id="po_6" class="form-control" placeholder="第六碼">
+
+  <input type="number" id="po_sp" class="form-control" placeholder="特別號1~8">
+</div>
+
+<div>購入頻率</div>
+<select class="form-select" id="freq" aria-label="Default select example">
+  <option selected value="every">每期 - 每週兩次開獎機會</option>
+  <option value="weekly">每週 - 每週一次開獎機會</option>
+  <option value="monthly">每月 - 每月一次開獎機會</option>
+  <option value="yearly">每年 - 每年一次開獎機會</option>
+</select>
+
+<div>單次購買張數(包含自選在內)</div>
+<div class="input-group mb-3">
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+  <input id="one_time_throw" type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="單次購入金額">
+  <span class="input-group-text">張</span>
+</div>
+
+
+
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
+  <label class="form-check-label" for="flexSwitchCheckDefault">多餘資金加入電腦選號</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+  <label class="form-check-label" for="flexSwitchCheckChecked">中獎資金將加回持有金額</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDisabled" disabled>
+  <label class="form-check-label" for="flexSwitchCheckDisabled">Disabled switch checkbox input</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled" checked disabled>
+  <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Disabled checked switch checkbox input</label>
+</div>
+
+<button type="submit" class="btn btn-primary btn-lg" onclick="start_simulate()">開始模擬</button>
+<div>
+  <h1 class="display-5">Result</h1>
+  <div id="resulter"></div>
+</div>
+
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>
