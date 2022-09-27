@@ -1,10 +1,10 @@
 # Simulotter
-
+## 施工中
 是一個讓你體驗花多少錢才可以中頭獎的網頁，目前只可以自行設定單次投入金額。
 
 https://skywalker0823.github.io/simulotter/
 
-## Tech
+## Techstacks
 * HTTP、JS、CSS
 * Bootstrap
 
