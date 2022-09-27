@@ -163,3 +163,5 @@ render_random = (numbers) => {
   //特別號
   document.getElementById("po_sp").value = generateRandomInteger(8);
 };
+
+//測試
